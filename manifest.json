@@ -1,0 +1,19 @@
+{
+  "name": "Hidden Japan",
+  "short_name": "HiddenJapan",
+  "description": "Curated map of hidden places in Japan",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#faf8f4",
+  "theme_color": "#c4703a",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
