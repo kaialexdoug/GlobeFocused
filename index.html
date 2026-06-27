@@ -221,7 +221,8 @@
     }
 
     /* Override leaflet for dark tiles */
-    .leaflet-tile-pane { filter: brightness(0.9) saturate(0.8); }
+    #map { background: #0d0d0d; }
+    .leaflet-container { background: #0d0d0d !important; }
     .leaflet-control-zoom a {
       background: var(--surface2) !important;
       color: var(--text) !important;
