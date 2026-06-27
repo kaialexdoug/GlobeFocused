@@ -1,4 +1,4 @@
-const CACHE = 'globefocused-v1';
+const CACHE = 'globefocused-26-6-27';
 
 const PRECACHE = [
   './',
