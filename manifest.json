@@ -1,7 +1,7 @@
 {
-  "name": "Hidden Japan",
-  "short_name": "HiddenJapan",
-  "description": "Curated map of hidden places in Japan",
+  "name": "Globe Focused",
+  "short_name": "GlobeFocused",
+  "description": "Curated map of hidden places in the world",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
