@@ -23,8 +23,8 @@
       --surface:   #161616;
       --surface2:  #1f1f1f;
       --border:    #2a2a2a;
-      --salmon:    #e8573a;
-      --salmon-dk: #c43e24;
+      --salmon:    #ff6a4d;
+      --salmon-dk: #d94e33;
       --text:      #f0ede8;
       --muted:     #7a7570;
       --nav-h:     calc(60px + env(safe-area-inset-bottom));
@@ -208,6 +208,38 @@
       flex-shrink: 0;
     }
 
+    .nearby-empty {
+      font-size: 14px;
+      color: var(--muted);
+      padding: 12px 0 4px;
+    }
+
+    /* ── Category grid ── */
+    .category-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding-bottom: 24px;
+    }
+
+    .cat-btn {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 16px 12px;
+      text-align: left;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .cat-btn:active {
+      background: var(--surface);
+      border-color: var(--salmon);
+    }
+
     /* ── EXPLORE screen ── */
     #screen-explore {
       flex: 1;
@@ -253,7 +285,7 @@
   <section id="screen-locations" class="screen">
     <div class="section-header">
       Featured
-      <strong>Locations</strong>
+      <strong>Journeys</strong>
     </div>
     <div class="location-list">
       <div class="location-item">
@@ -304,6 +336,27 @@
         </div>
         <span class="loc-tag">Sunrise/Sunset</span>
       </div>
+    </div>
+
+    <div class="section-header" style="margin-top:32px;">
+      Nearby
+      <strong>Right Now</strong>
+    </div>
+    <p class="nearby-empty">None found</p>
+
+    <div class="section-header" style="margin-top:32px;">
+      Explore
+      <strong>Categories</strong>
+    </div>
+    <div class="category-grid">
+      <button class="cat-btn">Hidden Places</button>
+      <button class="cat-btn">Photo Hotspots</button>
+      <button class="cat-btn">Scenic Routes</button>
+      <button class="cat-btn">Unique Stays</button>
+      <button class="cat-btn">Food &amp; Cafés</button>
+      <button class="cat-btn">Weird &amp; Wonderful</button>
+      <button class="cat-btn">Culture &amp; History</button>
+      <button class="cat-btn">Nature</button>
     </div>
   </section>
 
