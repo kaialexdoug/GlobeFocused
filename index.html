@@ -229,11 +229,11 @@
     .category-grid {
       display: flex;
       flex-direction: row;
+      overflow-x: auto;
+      overflow-y: visible;
       gap: 0;
-      padding-bottom: 28px;
       margin: 0 -20px;
-      padding-left: 20px;
-      padding-right: 20px;
+      padding: 4px 20px 28px;
       scrollbar-width: none;
       -ms-overflow-style: none;
     }
@@ -245,7 +245,9 @@
       color: var(--muted);
       font-size: 11px;
       font-weight: 500;
-      padding: 12px 4px;
+      flex: 0 0 calc((100vw - 40px) / 4.5);
+      min-width: 64px;
+      max-width: 80px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -255,12 +257,22 @@
       transition: color 0.15s;
       text-align: center;
       line-height: 1.3;
+      padding: 8px 4px;
+      overflow: hidden;
+    }
+    .cat-btn span.cat-label {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      word-break: break-word;
     }
     .cat-btn:active { color: var(--salmon); }
 
     .cat-icon {
       font-size: 24px;
       line-height: 1;
+      flex-shrink: 0;
     }
 
     /* ── EXPLORE screen ── */
@@ -370,14 +382,14 @@
       EXPLORE CATEGORIES
     </div>
     <div class="category-grid">
-      <button class="cat-btn"><span class="cat-icon">✦</span>Hidden Places</button>
-      <button class="cat-btn"><span class="cat-icon">📸</span>Photo Hotspots</button>
-      <button class="cat-btn"><span class="cat-icon">🛤️</span>Scenic Routes</button>
-      <button class="cat-btn"><span class="cat-icon">🏡</span>Unique Stays</button>
-      <button class="cat-btn"><span class="cat-icon">☕</span>Food &amp; Cafés</button>
-      <button class="cat-btn"><span class="cat-icon">🌀</span>Weird &amp; Wonderful</button>
-      <button class="cat-btn"><span class="cat-icon">⛩️</span>Culture &amp; History</button>
-      <button class="cat-btn"><span class="cat-icon">🌿</span>Nature</button>
+      <button class="cat-btn"><span class="cat-icon">✦</span><span class="cat-label">Hidden Places</span></button>
+      <button class="cat-btn"><span class="cat-icon">📸</span><span class="cat-label">Photo Hotspots</span></button>
+      <button class="cat-btn"><span class="cat-icon">🛤️</span><span class="cat-label">Scenic Routes</span></button>
+      <button class="cat-btn"><span class="cat-icon">🏡</span><span class="cat-label">Uniquedddfdfdffddf Stays</span></button>
+      <button class="cat-btn"><span class="cat-icon">☕</span><span class="cat-label">Food &amp; Cafés</span></button>
+      <button class="cat-btn"><span class="cat-icon">🌀</span><span class="cat-label">Weird &amp; Wonderful</span></button>
+      <button class="cat-btn"><span class="cat-icon">⛩️</span><span class="cat-label">Culture &amp; History</span></button>
+      <button class="cat-btn"><span class="cat-icon">🌿</span><span class="cat-label">Nature</span></button>
     </div>
   </section>
 
