@@ -286,6 +286,7 @@
       width: 100%;
     }
     .cat-btn:active { color: var(--salmon); }
+    .cat-btn.selected { color: var(--salmon); }
 
     .cat-icon {
       font-size: 24px;
@@ -401,14 +402,14 @@
     </div>
     <div class="category-scroll-wrap">
       <div class="category-grid">
-        <button class="cat-btn"><span class="cat-icon">✦</span><span class="cat-label">Hidden Places</span></button>
-        <button class="cat-btn"><span class="cat-icon">📸</span><span class="cat-label">Photo Hotspots</span></button>
-        <button class="cat-btn"><span class="cat-icon">🛤️</span><span class="cat-label">Scenic Routes</span></button>
-        <button class="cat-btn"><span class="cat-icon">🏡</span><span class="cat-label">Unique Stays</span></button>
-        <button class="cat-btn"><span class="cat-icon">☕</span><span class="cat-label">Food &amp; Cafés</span></button>
-        <button class="cat-btn"><span class="cat-icon">🌀</span><span class="cat-label">Weird &amp; Wonderful</span></button>
-        <button class="cat-btn"><span class="cat-icon">⛩️</span><span class="cat-label">Culture &amp; History</span></button>
-        <button class="cat-btn"><span class="cat-icon">🌿</span><span class="cat-label">Nature</span></button>
+        <button class="cat-btn" onclick="selectCategory(this)"><span class="cat-icon">✦</span><span class="cat-label">Hidden Places</span></button>
+        <button class="cat-btn" onclick="selectCategory(this)"><span class="cat-icon">📸</span><span class="cat-label">Photo Hotspots</span></button>
+        <button class="cat-btn" onclick="selectCategory(this)"><span class="cat-icon">🛤️</span><span class="cat-label">Scenic Routes</span></button>
+        <button class="cat-btn" onclick="selectCategory(this)"><span class="cat-icon">🏡</span><span class="cat-label">Unique Stays</span></button>
+        <button class="cat-btn" onclick="selectCategory(this)"><span class="cat-icon">☕</span><span class="cat-label">Food &amp; Cafés</span></button>
+        <button class="cat-btn" onclick="selectCategory(this)"><span class="cat-icon">🌀</span><span class="cat-label">Weird &amp; Wonderful</span></button>
+        <button class="cat-btn" onclick="selectCategory(this)"><span class="cat-icon">⛩️</span><span class="cat-label">Culture &amp; History</span></button>
+        <button class="cat-btn" onclick="selectCategory(this)"><span class="cat-icon">🌿</span><span class="cat-label">Nature</span></button>
       </div>
     </div>
   </section>
@@ -446,6 +447,11 @@
 
 <script>
   let mapInit = false;
+
+  function selectCategory(btn) {
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+  }
 
   function switchTab(id, btn) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
