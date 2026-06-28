@@ -226,18 +226,37 @@
     }
 
     /* ── Category grid ── */
+    .category-scroll-wrap {
+      margin: 0 -20px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 4px 20px 12px;
+      -webkit-overflow-scrolling: touch;
+    }
+    /* Styled scrollbar */
+    .category-scroll-wrap::-webkit-scrollbar {
+      height: 3px;
+    }
+    .category-scroll-wrap::-webkit-scrollbar-track {
+      background: var(--surface2);
+      border-radius: 999px;
+    }
+    .category-scroll-wrap::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 999px;
+    }
+    .category-scroll-wrap {
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) var(--surface2);
+    }
+
     .category-grid {
       display: flex;
       flex-direction: row;
-      overflow-x: auto;
-      overflow-y: visible;
       gap: 0;
-      margin: 0 -20px;
-      padding: 4px 20px 28px;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
+      width: max-content;
+      padding-bottom: 4px;
     }
-    .category-grid::-webkit-scrollbar { display: none; }
 
     .cat-btn {
       background: none;
@@ -245,9 +264,8 @@
       color: var(--muted);
       font-size: 11px;
       font-weight: 500;
-      flex: 0 0 calc((100vw - 40px) / 4.5);
-      min-width: 64px;
-      max-width: 80px;
+      width: 72px;
+      flex-shrink: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -258,7 +276,6 @@
       text-align: center;
       line-height: 1.3;
       padding: 8px 4px;
-      overflow: hidden;
     }
     .cat-btn span.cat-label {
       display: -webkit-box;
@@ -266,6 +283,7 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
       word-break: break-word;
+      width: 100%;
     }
     .cat-btn:active { color: var(--salmon); }
 
@@ -381,15 +399,17 @@
     <div class="section-header" style="margin-top:32px;">
       EXPLORE CATEGORIES
     </div>
-    <div class="category-grid">
-      <button class="cat-btn"><span class="cat-icon">✦</span><span class="cat-label">Hidden Places</span></button>
-      <button class="cat-btn"><span class="cat-icon">📸</span><span class="cat-label">Photo Hotspots</span></button>
-      <button class="cat-btn"><span class="cat-icon">🛤️</span><span class="cat-label">Scenic Routes</span></button>
-      <button class="cat-btn"><span class="cat-icon">🏡</span><span class="cat-label">Uniquedddfdfdffddf Stays</span></button>
-      <button class="cat-btn"><span class="cat-icon">☕</span><span class="cat-label">Food &amp; Cafés</span></button>
-      <button class="cat-btn"><span class="cat-icon">🌀</span><span class="cat-label">Weird &amp; Wonderful</span></button>
-      <button class="cat-btn"><span class="cat-icon">⛩️</span><span class="cat-label">Culture &amp; History</span></button>
-      <button class="cat-btn"><span class="cat-icon">🌿</span><span class="cat-label">Nature</span></button>
+    <div class="category-scroll-wrap">
+      <div class="category-grid">
+        <button class="cat-btn"><span class="cat-icon">✦</span><span class="cat-label">Hidden Places</span></button>
+        <button class="cat-btn"><span class="cat-icon">📸</span><span class="cat-label">Photo Hotspots</span></button>
+        <button class="cat-btn"><span class="cat-icon">🛤️</span><span class="cat-label">Scenic Routes</span></button>
+        <button class="cat-btn"><span class="cat-icon">🏡</span><span class="cat-label">Unique Stays</span></button>
+        <button class="cat-btn"><span class="cat-icon">☕</span><span class="cat-label">Food &amp; Cafés</span></button>
+        <button class="cat-btn"><span class="cat-icon">🌀</span><span class="cat-label">Weird &amp; Wonderful</span></button>
+        <button class="cat-btn"><span class="cat-icon">⛩️</span><span class="cat-label">Culture &amp; History</span></button>
+        <button class="cat-btn"><span class="cat-icon">🌿</span><span class="cat-label">Nature</span></button>
+      </div>
     </div>
   </section>
 
