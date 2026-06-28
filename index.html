@@ -19,10 +19,10 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #0d0d0d;
-      --surface:   #161616;
-      --surface2:  #1f1f1f;
-      --border:    #2a2a2a;
+      --bg:        #0b0b12;
+      --surface:   #17181c;
+      --surface2:  #24252a;
+      --border:    #1b1a22;
       --salmon:    #ff6a4d;
       --salmon-dk: #d94e33;
       --text:      #f0ede8;
@@ -59,14 +59,25 @@
     nav {
       flex-shrink: 0;
       display: flex;
-      align-items: stretch;
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      height: var(--nav-h);
-      padding-bottom: env(safe-area-inset-bottom);
+      align-items: flex-end;
+      justify-content: center;
+      background: transparent;
+      padding: 10px 20px;
+      padding-bottom: calc(10px + env(safe-area-inset-bottom));
     }
 
-    nav button {
+    .nav-pill {
+      display: flex;
+      align-items: stretch;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .nav-pill button {
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -80,12 +91,12 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
       cursor: pointer;
-      padding: 8px 0 4px;
+      padding: 12px 0;
       transition: color 0.18s;
       -webkit-tap-highlight-color: transparent;
     }
-    nav button.active { color: var(--salmon); }
-    nav button svg { width: 22px; height: 22px; }
+    .nav-pill button.active { color: var(--salmon); }
+    .nav-pill button svg { width: 22px; height: 22px; }
 
     /* ── HOME screen ── */
     #screen-home {
@@ -216,34 +227,47 @@
 
     /* ── Category grid ── */
     .category-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      padding-bottom: 24px;
+      display: flex;
+      flex-direction: row;
+      gap: 0;
+      padding-bottom: 28px;
+      margin: 0 -20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
+    .category-grid::-webkit-scrollbar { display: none; }
 
     .cat-btn {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      color: var(--text);
-      font-size: 14px;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 11px;
       font-weight: 500;
-      padding: 16px 12px;
-      text-align: left;
+      padding: 12px 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
       cursor: pointer;
       -webkit-tap-highlight-color: transparent;
-      transition: border-color 0.15s, background 0.15s;
+      transition: color 0.15s;
+      text-align: center;
+      line-height: 1.3;
     }
-    .cat-btn:active {
-      background: var(--surface);
-      border-color: var(--salmon);
+    .cat-btn:active { color: var(--salmon); }
+
+    .cat-icon {
+      font-size: 24px;
+      line-height: 1;
     }
 
     /* ── EXPLORE screen ── */
     #screen-explore {
       flex: 1;
       overflow: hidden;
+      position: relative;
     }
     #screen-explore.active { display: flex; }
 
@@ -284,8 +308,7 @@
   <!-- LOCATIONS -->
   <section id="screen-locations" class="screen">
     <div class="section-header">
-      Featured
-      <strong>Journeys</strong>
+      FEATURED JOURNEYS
     </div>
     <div class="location-list">
       <div class="location-item">
@@ -344,18 +367,17 @@
     <p class="nearby-empty">None found</p>
 
     <div class="section-header" style="margin-top:32px;">
-      Explore
-      <strong>Categories</strong>
+      EXPLORE CATEGORIES
     </div>
     <div class="category-grid">
-      <button class="cat-btn">Hidden Places</button>
-      <button class="cat-btn">Photo Hotspots</button>
-      <button class="cat-btn">Scenic Routes</button>
-      <button class="cat-btn">Unique Stays</button>
-      <button class="cat-btn">Food &amp; Cafés</button>
-      <button class="cat-btn">Weird &amp; Wonderful</button>
-      <button class="cat-btn">Culture &amp; History</button>
-      <button class="cat-btn">Nature</button>
+      <button class="cat-btn"><span class="cat-icon">✦</span>Hidden Places</button>
+      <button class="cat-btn"><span class="cat-icon">📸</span>Photo Hotspots</button>
+      <button class="cat-btn"><span class="cat-icon">🛤️</span>Scenic Routes</button>
+      <button class="cat-btn"><span class="cat-icon">🏡</span>Unique Stays</button>
+      <button class="cat-btn"><span class="cat-icon">☕</span>Food &amp; Cafés</button>
+      <button class="cat-btn"><span class="cat-icon">🌀</span>Weird &amp; Wonderful</button>
+      <button class="cat-btn"><span class="cat-icon">⛩️</span>Culture &amp; History</button>
+      <button class="cat-btn"><span class="cat-icon">🌿</span>Nature</button>
     </div>
   </section>
 
@@ -366,24 +388,26 @@
 
   <!-- BOTTOM NAV -->
   <nav>
-    <button class="active" onclick="switchTab('home', this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/>
-      </svg>
-      Home
-    </button>
-    <button onclick="switchTab('locations', this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/>
-      </svg>
-      Locations
-    </button>
-    <button onclick="switchTab('explore', this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>
-      </svg>
-      Explore
-    </button>
+    <div class="nav-pill">
+      <button class="active" onclick="switchTab('home', this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/>
+        </svg>
+        Home
+      </button>
+      <button onclick="switchTab('locations', this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/>
+        </svg>
+        Locations
+      </button>
+      <button onclick="switchTab('explore', this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>
+        </svg>
+        Explore
+      </button>
+    </div>
   </nav>
 
 </div>
