@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="30"
+   height="30"
+   viewBox="30 30 30 30"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1">
+    <path
+       style="fill:none;fill-opacity:0;stroke:#e3e3e3;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+       id="path5"
+       d="M 44.999996,30 A 14.999996,15.000004 0 0 1 30,45.000004" />
+    <path
+       style="fill:none;fill-opacity:0;stroke:#e3e3e3;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+       id="path5-1"
+       d="M 45.000004,-60 A 15.000004,14.999996 0 0 1 30,-45.000004"
+       transform="rotate(90)" />
+    <path
+       style="fill:none;fill-opacity:0;stroke:#e3e3e3;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+       id="path5-0"
+       d="M -45.000004,-60 A 14.999996,15.000004 0 0 1 -60,-44.999996"
+       transform="scale(-1)" />
+    <path
+       style="fill:none;fill-opacity:0;stroke:#e3e3e3;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+       id="path5-1-2"
+       d="M -44.999996,30 A 15.000004,14.999996 0 0 1 -60,44.999996"
+       transform="rotate(-90)" />
+    <path
+       style="fill:none;fill-opacity:0;stroke:#e3e3e3;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+       id="path5-4"
+       d="m 44.99911,42.05275 a 2.939399,2.9394007 0 0 1 -2.939399,2.9394" />
+    <path
+       style="fill:none;fill-opacity:0;stroke:#e3e3e3;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+       id="path5-1-8"
+       d="m 44.99215,-47.938511 a 2.9394007,2.939399 0 0 1 -2.9394,2.939399"
+       transform="rotate(90)" />
+    <path
+       style="fill:none;fill-opacity:0;stroke:#e3e3e3;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+       id="path5-0-6"
+       d="m -44.999112,-47.931549 a 2.939399,2.9394007 0 0 1 -2.939399,2.939401"
+       transform="scale(-1)" />
+    <path
+       style="fill:none;fill-opacity:0;stroke:#e3e3e3;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+       id="path5-1-2-5"
+       d="m -44.992148,42.059711 a 2.9394007,2.939399 0 0 1 -2.939401,2.939399"
+       transform="rotate(-90)" />
+  </g>
+</svg>
